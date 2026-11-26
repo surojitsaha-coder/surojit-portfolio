@@ -1,0 +1,1052 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surojit Saha | B.Sc. Computer Science & Visual Media Creator (nexus.visuals)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#151e32',
+                            900: '#0f172a',
+                            950: '#090d16',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Print Styles for Recruiter Resume Export */
+        @media print {
+            body {
+                background: #ffffff !important;
+                color: #0f172a !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            #resume-modal {
+                position: static !important;
+                background: transparent !important;
+                padding: 0 !important;
+                display: block !important;
+                overflow: visible !important;
+            }
+            #resume-paper {
+                box-shadow: none !important;
+                border: none !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200 font-sans antialiased selection:bg-indigo-500 selection:text-white overflow-x-hidden">
+
+    <!-- ==================== NAVIGATION BAR ==================== -->
+    <header class="no-print fixed top-0 inset-x-0 z-40 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Brand / Monogram -->
+            <a href="#" class="flex items-center gap-2.5 group">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-400 flex items-center justify-center text-slate-950 font-extrabold text-sm tracking-tight shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+                    SS
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-slate-100 text-sm sm:text-base leading-none">Surojit Saha</span>
+                    <span class="font-mono text-[11px] text-cyan-400 leading-tight mt-0.5">nexus.visuals</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-400">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+                <a href="#work" class="hover:text-white transition-colors">Work & Projects</a>
+                <a href="#education" class="hover:text-white transition-colors">Education</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-2.5">
+                <button onclick="openResumeModal()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-100 border border-slate-700 text-xs sm:text-sm font-medium transition-all cursor-pointer">
+                    <i data-lucide="file-text" class="w-4 h-4 text-cyan-400"></i>
+                    <span>Resume</span>
+                </button>
+                <a href="#contact" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs sm:text-sm font-semibold shadow-lg shadow-indigo-600/25 transition-all">
+                    <span>Hire Me</span>
+                </a>
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white" aria-label="Toggle Menu">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-3 pb-5 space-y-2">
+            <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white">About</a>
+            <a href="#skills" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white">Skills</a>
+            <a href="#work" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white">Work & Projects</a>
+            <a href="#education" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white">Education</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl text-sm font-semibold text-indigo-400 hover:bg-slate-800">Contact & Hire Me</a>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="no-print pt-24 pb-16">
+
+        <!-- 1. HERO SECTION -->
+        <section class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-16 sm:pt-12 sm:pb-24">
+            <!-- Subtle Background Glow -->
+            <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[320px] sm:w-[600px] h-[260px] bg-indigo-600/15 blur-[110px] rounded-full pointer-events-none"></div>
+
+            <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+                <!-- Left Pitch Column -->
+                <div class="lg:col-span-7 space-y-6">
+                    <!-- Availability Status Pill -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-300 text-xs font-medium">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>Open to CS / Tech Internships & Creative Media Roles</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-[3.35rem] font-extrabold text-white tracking-tight leading-[1.12]">
+                        Analytical <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-300">Computer Science</span> Undergrad & Visual Storyteller.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+                        Hi, I'm <strong class="text-white font-semibold">Surojit Saha</strong> — a first-year B.Sc. Computer Science student at <span class="text-slate-100">Surya Sen Mahavidyalaya (University of North Bengal)</span> and freelance Video Editor, Cameraman & Graphic Designer operating under <span class="font-mono text-cyan-400">nexus.visuals</span>. I combine structured algorithmic thinking with compelling visual execution.
+                    </p>
+
+                    <!-- Location & Quick Info -->
+                    <div class="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-400">
+                        <span class="inline-flex items-center gap-1.5">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-indigo-400"></i>
+                            Falakata / Siliguri, West Bengal, India
+                        </span>
+                        <span class="hidden sm:inline text-slate-700">•</span>
+                        <span class="inline-flex items-center gap-1.5">
+                            <i data-lucide="briefcase" class="w-4 h-4 text-cyan-400"></i>
+                            Remote & On-Site Ready
+                        </span>
+                    </div>
+
+                    <!-- Primary CTAs -->
+                    <div class="flex flex-wrap items-center gap-3.5 pt-2">
+                        <a href="#contact" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm sm:text-base shadow-xl shadow-indigo-600/25 transition-all">
+                            <span>Hire Surojit</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                        <button onclick="openResumeModal()" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-slate-100 border border-slate-700 font-semibold text-sm sm:text-base transition-all cursor-pointer">
+                            <i data-lucide="download" class="w-4 h-4 text-cyan-400"></i>
+                            <span>View / Print Resume</span>
+                        </button>
+                        <a href="https://www.linkedin.com/in/surojit-saha-573ba4433" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-2xl bg-slate-900/70 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 text-sm font-medium transition-all" aria-label="LinkedIn Profile">
+                            <i data-lucide="linkedin" class="w-4 h-4 text-sky-400"></i>
+                            <span class="hidden sm:inline">LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Profile Summary Card -->
+                <div class="lg:col-span-5">
+                    <div class="rounded-3xl bg-slate-900/90 border border-slate-800 p-6 sm:p-7 shadow-2xl space-y-6">
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-5">
+                            <div class="flex items-center gap-3.5">
+                                <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 flex items-center justify-center text-white font-extrabold text-xl shadow-lg">
+                                    SS
+                                </div>
+                                <div>
+                                    <h2 class="text-lg font-bold text-white">Surojit Saha</h2>
+                                    <p class="text-xs text-slate-400">B.Sc. Computer Science (1st Year)</p>
+                                    <p class="font-mono text-xs text-cyan-400 mt-0.5">Founder @ nexus.visuals</p>
+                                </div>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-lg bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 font-mono text-xs">
+                                2026
+                            </span>
+                        </div>
+
+                        <!-- Dual-Track Value Proposition -->
+                        <div class="space-y-3.5">
+                            <div class="p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800/90 flex items-start gap-3">
+                                <div class="p-2 rounded-xl bg-indigo-500/15 text-indigo-400 shrink-0 mt-0.5">
+                                    <i data-lucide="cpu" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-semibold text-white">Tech & CS Track</h3>
+                                    <p class="text-xs text-slate-400 mt-0.5 leading-relaxed">C Programming, Digital Logic Design, Calculus, MS Excel & structured problem-solving.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800/90 flex items-start gap-3">
+                                <div class="p-2 rounded-xl bg-cyan-500/15 text-cyan-400 shrink-0 mt-0.5">
+                                    <i data-lucide="clapperboard" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-semibold text-white">Creative & Media Track</h3>
+                                    <p class="text-xs text-slate-400 mt-0.5 leading-relaxed">DaVinci Resolve, Color Grading, Cinematography, Typography & Brand Poster Design.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Stats -->
+                        <div class="grid grid-cols-3 gap-2.5 pt-1 text-center">
+                            <div class="p-2.5 rounded-2xl bg-slate-800/50 border border-slate-800">
+                                <div class="text-base sm:text-lg font-bold text-white">NBU</div>
+                                <div class="text-[11px] text-slate-400">CS Honors/Major</div>
+                            </div>
+                            <div class="p-2.5 rounded-2xl bg-slate-800/50 border border-slate-800">
+                                <div class="text-base sm:text-lg font-bold text-cyan-400">2-in-1</div>
+                                <div class="text-[11px] text-slate-400">Logic + Visuals</div>
+                            </div>
+                            <div class="p-2.5 rounded-2xl bg-slate-800/50 border border-slate-800">
+                                <div class="text-base sm:text-lg font-bold text-emerald-400">100%</div>
+                                <div class="text-[11px] text-slate-400">Deadline Driven</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT SECTION -->
+        <section id="about" class="py-16 sm:py-20 border-t border-slate-900 bg-slate-900/30">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl">
+                    <span class="font-mono text-xs uppercase tracking-wider text-indigo-400 font-semibold">01 / About Me</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2">Bridging Computational Logic with Visual Storytelling</h2>
+                </div>
+
+                <div class="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <div class="lg:col-span-7 space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+                        <p>
+                            I am a dedicated first-year <strong class="text-white font-medium">B.Sc. Computer Science</strong> undergraduate at <strong class="text-white font-medium">Surya Sen Mahavidyalaya</strong> (affiliated with the University of North Bengal), dividing my time between Falakata and Siliguri, West Bengal. My academic focus centers on building rock-solid computational foundations—writing clean procedural code in <strong class="text-indigo-300 font-medium">C</strong>, designing combinational and sequential circuits in <strong class="text-indigo-300 font-medium">Digital Logic Design</strong>, and mastering mathematical reasoning through <strong class="text-indigo-300 font-medium">Calculus</strong>.
+                        </p>
+                        <p>
+                            Alongside my technical studies, I run <strong class="text-cyan-400 font-mono font-medium">nexus.visuals</strong>, an independent creative media practice where I work as a freelance <strong class="text-white font-medium">Video Editor, Cameraman, and Graphic Designer</strong>. From shooting dynamic event footage on location to color grading in <strong class="text-white font-medium">DaVinci Resolve</strong> and crafting high-impact typographic posters, I translate raw ideas into polished digital experiences.
+                        </p>
+                        <p>
+                            For hiring managers and teams, this dual background means you get a fast-learning collaborator who understands both <span class="text-slate-100 underline decoration-indigo-500/60 underline-offset-4">how systems work under the hood</span> and <span class="text-slate-100 underline decoration-cyan-500/60 underline-offset-4">how audiences engage visually</span>.
+                        </p>
+                    </div>
+
+                    <!-- Why Hire Me Highlights -->
+                    <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+                        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+                            <div class="flex items-center gap-3 text-white font-semibold text-sm">
+                                <i data-lucide="terminal" class="w-5 h-5 text-indigo-400"></i>
+                                <span>For Tech & Software Teams</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
+                                Strong grasp of C syntax, memory concepts, boolean algebra, data organization in MS Excel, and clear technical documentation. Eager to contribute to entry-level engineering, QA, or IT operations internships.
+                            </p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+                            <div class="flex items-center gap-3 text-white font-semibold text-sm">
+                                <i data-lucide="film" class="w-5 h-5 text-cyan-400"></i>
+                                <span>For Agencies, Brands & Creators</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed">
+                                End-to-end production capability: camera framing, pacing-focused editing, cinematic color correction, social media reels, and clean typographic poster/thumbnail design.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SKILLS SECTION -->
+        <section id="skills" class="py-16 sm:py-20 border-t border-slate-900">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                    <div>
+                        <span class="font-mono text-xs uppercase tracking-wider text-cyan-400 font-semibold">02 / Core Competencies</span>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2">Categorized Skillset</h2>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 max-w-md">
+                        Balanced across computer science fundamentals, productivity tools, and post-production workflows.
+                    </p>
+                </div>
+
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                    <!-- Category 1: Technical & Academic -->
+                    <div class="rounded-3xl bg-slate-900/80 border border-slate-800 p-6 sm:p-8 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-11 h-11 rounded-2xl bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+                                    <i data-lucide="code-2" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white">Technical & Academic</h3>
+                                    <p class="text-xs text-slate-400">Computer Science & Quantitative Foundations</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between text-xs sm:text-sm font-medium mb-1.5">
+                                        <span class="text-slate-200">C Programming (Pointers, Arrays, Structures, File I/O)</span>
+                                        <span class="font-mono text-indigo-400">Core</span>
+                                    </div>
+                                    <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+                                        <div class="h-full bg-gradient-to-r from-indigo-500 to-indigo-400 rounded-full w-[88%]"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-xs sm:text-sm font-medium mb-1.5">
+                                        <span class="text-slate-200">Digital Logic Design (Boolean Algebra, Gates, Flip-Flops)</span>
+                                        <span class="font-mono text-indigo-400">Core</span>
+                                    </div>
+                                    <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+                                        <div class="h-full bg-gradient-to-r from-indigo-500 to-indigo-400 rounded-full w-[85%]"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-xs sm:text-sm font-medium mb-1.5">
+                                        <span class="text-slate-200">Calculus & Discrete Analytical Reasoning</span>
+                                        <span class="font-mono text-indigo-400">Strong</span>
+                                    </div>
+                                    <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+                                        <div class="h-full bg-gradient-to-r from-indigo-500 to-indigo-400 rounded-full w-[82%]"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-xs sm:text-sm font-medium mb-1.5">
+                                        <span class="text-slate-200">MS Excel & PowerPoint (Data Analysis & Presentations)</span>
+                                        <span class="font-mono text-indigo-400">Proficient</span>
+                                    </div>
+                                    <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+                                        <div class="h-full bg-gradient-to-r from-indigo-500 to-indigo-400 rounded-full w-[90%]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Skill Tags -->
+                        <div class="mt-7 pt-5 border-t border-slate-800/80 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">GCC / C99</span>
+                            <span class="px-3 py-1 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">K-Maps & Logic Circuits</span>
+                            <span class="px-3 py-1 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">Differential Calculus</span>
+                            <span class="px-3 py-1 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">Spreadsheet Formulas</span>
+                            <span class="px-3 py-1 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">Technical Pitch Decks</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 2: Creative & Media -->
+                    <div class="rounded-3xl bg-slate-900/80 border border-slate-800 p-6 sm:p-8 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-11 h-11 rounded-2xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                                    <i data-lucide="aperture" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-white">Creative & Media</h3>
+                                    <p class="text-xs text-slate-400">Post-Production, Cinematography & Visual Design</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between text-xs sm:text-sm font-medium mb-1.5">
+                                        <span class="text-slate-200">DaVinci Resolve (Non-Linear Editing & Color Grading)</span>
+                                        <span class="font-mono text-cyan-400">Advanced</span>
+                                    </div>
+                                    <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+                                        <div class="h-full bg-gradient-to-r from-cyan-500 to-teal-400 rounded-full w-[92%]"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-xs sm:text-sm font-medium mb-1.5">
+                                        <span class="text-slate-200">CapCut & Wondershare Filmora (Fast-Turnaround Reels)</span>
+                                        <span class="font-mono text-cyan-400">Advanced</span>
+                                    </div>
+                                    <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+                                        <div class="h-full bg-gradient-to-r from-cyan-500 to-teal-400 rounded-full w-[95%]"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-xs sm:text-sm font-medium mb-1.5">
+                                        <span class="text-slate-200">Camera Operation, Framing & Event Cinematography</span>
+                                        <span class="font-mono text-cyan-400">Hands-On</span>
+                                    </div>
+                                    <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+                                        <div class="h-full bg-gradient-to-r from-cyan-500 to-teal-400 rounded-full w-[88%]"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-xs sm:text-sm font-medium mb-1.5">
+                                        <span class="text-slate-200">Graphic Design, Typography & Event Poster Layout</span>
+                                        <span class="font-mono text-cyan-400">Strong</span>
+                                    </div>
+                                    <div class="w-full h-2 rounded-full bg-slate-800 overflow-hidden">
+                                        <div class="h-full bg-gradient-to-r from-cyan-500 to-teal-400 rounded-full w-[86%]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Skill Tags -->
+                        <div class="mt-7 pt-5 border-t border-slate-800/80 flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">DaVinci Resolve</span>
+                            <span class="px-3 py-1 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">Color Wheels & LUTs</span>
+                            <span class="px-3 py-1 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">CapCut Desktop/Mobile</span>
+                            <span class="px-3 py-1 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">Filmora</span>
+                            <span class="px-3 py-1 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">Typography & Posters</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. FEATURED PROJECTS & EXPERIENCE -->
+        <section id="work" class="py-16 sm:py-20 border-t border-slate-900 bg-slate-900/30">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                    <div>
+                        <span class="font-mono text-xs uppercase tracking-wider text-indigo-400 font-semibold">03 / Experience & Portfolio</span>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2">Featured Work & Academic Projects</h2>
+                    </div>
+
+                    <!-- Filter Tabs -->
+                    <div class="inline-flex p-1 rounded-2xl bg-slate-900 border border-slate-800 self-start">
+                        <button onclick="filterProjects('all')" data-filter="all" class="filter-btn active px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-indigo-600 text-white transition-all cursor-pointer">
+                            All Work
+                        </button>
+                        <button onclick="filterProjects('media')" data-filter="media" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition-all cursor-pointer">
+                            Creative & Media
+                        </button>
+                        <button onclick="filterProjects('tech')" data-filter="tech" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white transition-all cursor-pointer">
+                            CS & Technical
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cards Grid -->
+                <div id="projects-grid" class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Project 1: nexus.visuals -->
+                    <article data-category="media" class="project-card group rounded-3xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-4">
+                                <span class="px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-300 text-xs font-mono font-medium">
+                                    Freelance Brand
+                                </span>
+                                <span class="text-xs text-slate-500 font-mono">2024 – Present</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
+                                nexus.visuals — Video Editing & Visual Production
+                            </h3>
+                            <p class="text-xs font-medium text-slate-400 mt-1">Founder, Lead Video Editor & Cameraman</p>
+                            <p class="text-sm text-slate-300 mt-3 leading-relaxed">
+                                Built an independent creative production label serving clients across Falakata and Siliguri. Deliver end-to-end commercial reels, promotional edits, cinematic color grading in DaVinci Resolve, and custom typographic posters.
+                            </p>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-800/80">
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-950 text-[11px] font-mono text-slate-300">DaVinci Resolve</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-950 text-[11px] font-mono text-slate-300">Color Grading</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-950 text-[11px] font-mono text-slate-300">Poster Design</span>
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-cyan-400 font-medium">
+                                <span>Client-Ready Visual Delivery</span>
+                                <i data-lucide="sparkles" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: C Programming & Digital Logic Coursework -->
+                    <article data-category="tech" class="project-card group rounded-3xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-4">
+                                <span class="px-3 py-1 rounded-full bg-indigo-500/15 text-indigo-300 text-xs font-mono font-medium">
+                                    CS Coursework
+                                </span>
+                                <span class="text-xs text-slate-500 font-mono">B.Sc. Sem I–II</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-indigo-300 transition-colors">
+                                C Algorithms & Digital Logic Lab Suite
+                            </h3>
+                            <p class="text-xs font-medium text-slate-400 mt-1">Surya Sen Mahavidyalaya (NBU)</p>
+                            <p class="text-sm text-slate-300 mt-3 leading-relaxed">
+                                Developed structured C programs covering matrix operations, sorting/searching algorithms, recursion, and file-based student record management, paired with Karnaugh-map minimized combinational logic circuit designs.
+                            </p>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-800/80">
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-950 text-[11px] font-mono text-slate-300">C Language</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-950 text-[11px] font-mono text-slate-300">Digital Logic</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-950 text-[11px] font-mono text-slate-300">Boolean Algebra</span>
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-indigo-400 font-medium">
+                                <span>Structured Algorithmic Logic</span>
+                                <i data-lucide="cpu" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Community & Cultural Media Production -->
+                    <article data-category="media" class="project-card group rounded-3xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-4">
+                                <span class="px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-300 text-xs font-mono font-medium">
+                                    Field Production
+                                </span>
+                                <span class="text-xs text-slate-500 font-mono">On-Location</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">
+                                Cultural & Campus Event Cinematography
+                            </h3>
+                            <p class="text-xs font-medium text-slate-400 mt-1">Cameraman, Editor & Promo Designer</p>
+                            <p class="text-sm text-slate-300 mt-3 leading-relaxed">
+                                Directed multi-angle handheld camera coverage, synchronized live audio, edited high-retention recap videos in CapCut & Filmora, and designed official event announcement posters with balanced typography.
+                            </p>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-800/80">
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-950 text-[11px] font-mono text-slate-300">Cinematography</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-950 text-[11px] font-mono text-slate-300">CapCut & Filmora</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-950 text-[11px] font-mono text-slate-300">Typography</span>
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-emerald-400 font-medium">
+                                <span>End-to-End Event Coverage</span>
+                                <i data-lucide="video" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: Quantitative & Data Reporting -->
+                    <article data-category="tech" class="project-card group rounded-3xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 md:col-span-2 lg:col-span-3">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                            <div class="lg:col-span-8">
+                                <div class="flex flex-wrap items-center gap-2 mb-3">
+                                    <span class="px-3 py-1 rounded-full bg-indigo-500/15 text-indigo-300 text-xs font-mono font-medium">
+                                        Operations & Analytics
+                                    </span>
+                                    <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-mono">
+                                        MS Excel • PowerPoint • Calculus
+                                    </span>
+                                </div>
+                                <h3 class="text-lg sm:text-xl font-bold text-white">
+                                    Structured Data Modeling & Executive Presentation Workflows
+                                </h3>
+                                <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+                                    Combining mathematical modeling from Calculus with automated MS Excel workbooks (lookup functions, conditional formatting, summary dashboards) and clean PowerPoint decks to organize project schedules, freelance media budgets, and academic lab reports.
+                                </p>
+                            </div>
+                            <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 lg:border-l lg:border-slate-800 lg:pl-6">
+                                <div class="p-3 rounded-2xl bg-slate-950/90 border border-slate-800/80">
+                                    <div class="text-xs text-slate-400">Primary Tools</div>
+                                    <div class="text-sm font-semibold text-white mt-0.5">MS Excel, PowerPoint, C</div>
+                                </div>
+                                <div class="p-3 rounded-2xl bg-slate-950/90 border border-slate-800/80">
+                                    <div class="text-xs text-slate-400">Recruiter Value</div>
+                                    <div class="text-sm font-semibold text-cyan-400 mt-0.5">Zero-Friction Reporting & Ops</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. EDUCATION TIMELINE -->
+        <section id="education" class="py-16 sm:py-20 border-t border-slate-900">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-2xl">
+                    <span class="font-mono text-xs uppercase tracking-wider text-cyan-400 font-semibold">04 / Academic Background</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2">Education Timeline</h2>
+                </div>
+
+                <div class="mt-10 relative border-l-2 border-slate-800 ml-3 sm:ml-4 space-y-8">
+                    <!-- Entry 1: B.Sc. Computer Science -->
+                    <div class="relative pl-7 sm:pl-9">
+                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-indigo-500 ring-4 ring-slate-950"></span>
+                        <div class="rounded-3xl bg-slate-900 border border-slate-800 p-6 sm:p-7">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <span class="px-3 py-1 rounded-full bg-indigo-500/15 text-indigo-300 font-mono text-xs font-semibold">
+                                    2026 – Present (1st Year Undergraduate)
+                                </span>
+                                <span class="text-xs sm:text-sm text-slate-400 flex items-center gap-1.5">
+                                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-indigo-400"></i>
+                                    Siliguri, West Bengal
+                                </span>
+                            </div>
+
+                            <h3 class="text-lg sm:text-xl font-bold text-white mt-3">
+                                Bachelor of Science (B.Sc.) in Computer Science
+                            </h3>
+                            <p class="text-sm font-medium text-cyan-400 mt-0.5">
+                                Surya Sen Mahavidyalaya • Affiliated with University of North Bengal (NBU)
+                            </p>
+
+                            <p class="text-sm text-slate-300 mt-3 leading-relaxed">
+                                Pursuing undergraduate studies in Computer Science with intensive coursework in procedural programming, digital hardware fundamentals, and mathematics.
+                            </p>
+
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">C Programming</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">Digital Logic Design</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">Calculus</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">Computer Fundamentals</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Entry 2: Higher Secondary -->
+                    <div class="relative pl-7 sm:pl-9">
+                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyan-400 ring-4 ring-slate-950"></span>
+                        <div class="rounded-3xl bg-slate-900/70 border border-slate-800 p-6 sm:p-7">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 font-mono text-xs font-semibold">
+                                    Completed Higher Secondary (Class XII)
+                                </span>
+                                <span class="text-xs sm:text-sm text-slate-400 flex items-center gap-1.5">
+                                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-cyan-400"></i>
+                                    Falakata, West Bengal
+                                </span>
+                            </div>
+
+                            <h3 class="text-lg sm:text-xl font-bold text-white mt-3">
+                                Higher Secondary Education (10+2)
+                            </h3>
+                            <p class="text-sm font-medium text-slate-400 mt-0.5">
+                                West Bengal Council of Higher Secondary Education (WBCHSE)
+                            </p>
+
+                            <p class="text-sm text-slate-300 mt-3 leading-relaxed">
+                                Built strong analytical, mathematical, and quantitative foundations while initiating independent work in video production, photography, and digital graphic design.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CONTACT / HIRE ME SECTION -->
+        <section id="contact" class="py-16 sm:py-24 border-t border-slate-900 bg-gradient-to-b from-slate-900/40 to-slate-950">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                    <!-- Left Direct Contact Info -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div>
+                            <span class="font-mono text-xs uppercase tracking-wider text-indigo-400 font-semibold">05 / Connect & Hire</span>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2">Ready to Contribute to Your Team</h2>
+                            <p class="text-sm sm:text-base text-slate-300 mt-3 leading-relaxed">
+                                Whether you're recruiting for an entry-level Computer Science / IT internship or looking for a reliable video editor, cameraman, and designer through <span class="font-mono text-cyan-400">nexus.visuals</span>, let's connect.
+                            </p>
+                        </div>
+
+                        <!-- Direct LinkedIn Card -->
+                        <a href="https://www.linkedin.com/in/surojit-saha-573ba4433" target="_blank" rel="noopener noreferrer" class="block p-5 rounded-3xl bg-slate-900 border border-slate-800 hover:border-sky-500/60 transition-all group">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-3.5">
+                                    <div class="w-11 h-11 rounded-2xl bg-sky-500/15 text-sky-400 flex items-center justify-center">
+                                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm font-bold text-white group-hover:text-sky-400 transition-colors">Connect on LinkedIn</div>
+                                        <div class="text-xs text-slate-400 font-mono mt-0.5">linkedin.com/in/surojit-saha-573ba4433</div>
+                                    </div>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-sky-400"></i>
+                            </div>
+                        </a>
+
+                        <!-- Location & Availability Details -->
+                        <div class="p-5 rounded-3xl bg-slate-900/70 border border-slate-800 space-y-3.5 text-sm">
+                            <div class="flex items-center gap-3 text-slate-300">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-indigo-400 shrink-0"></i>
+                                <span>Falakata & Siliguri, West Bengal, India</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-300">
+                                <i data-lucide="clock" class="w-4 h-4 text-cyan-400 shrink-0"></i>
+                                <span>Available for Remote Internships & Freelance Projects</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-300">
+                                <i data-lucide="languages" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                                <span>English, Bengali, Hindi</span>
+                            </div>
+                        </div>
+
+                        <!-- Share Portfolio Link Utility -->
+                        <div class="p-4 rounded-2xl bg-slate-900/50 border border-slate-800/80 flex items-center justify-between gap-3">
+                            <div class="truncate">
+                                <div class="text-[11px] uppercase tracking-wider text-slate-400 font-mono">Recruiter Profile Link</div>
+                                <div id="share-url-display" class="text-xs text-slate-200 truncate font-mono mt-0.5">https://www.linkedin.com/in/surojit-saha-573ba4433</div>
+                            </div>
+                            <button onclick="copyProfileLink()" class="shrink-0 inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-medium text-white transition-colors cursor-pointer">
+                                <i data-lucide="copy" class="w-3.5 h-3.5 text-cyan-400"></i>
+                                <span id="copy-btn-text">Copy</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right Recruiter / Client Inquiry Form -->
+                    <div class="lg:col-span-7">
+                        <form id="hire-form" onsubmit="handleInquirySubmit(event)" class="rounded-3xl bg-slate-900 border border-slate-800 p-6 sm:p-8 shadow-2xl space-y-5">
+                            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                                <h3 class="text-lg font-bold text-white">Send a Hiring or Project Inquiry</h3>
+                                <span class="text-xs font-mono text-emerald-400">Fast Response</span>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="recruiter-name" class="block text-xs font-medium text-slate-300 mb-1.5">Your Name / Recruiter *</label>
+                                    <input type="text" id="recruiter-name" required placeholder="e.g., Ananya Sharma" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:border-indigo-500 focus:outline-none text-sm text-white placeholder-slate-500">
+                                </div>
+                                <div>
+                                    <label for="company-name" class="block text-xs font-medium text-slate-300 mb-1.5">Company / Organization *</label>
+                                    <input type="text" id="company-name" required placeholder="e.g., TechCorp / Studio" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:border-indigo-500 focus:outline-none text-sm text-white placeholder-slate-500">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="recruiter-email" class="block text-xs font-medium text-slate-300 mb-1.5">Work Email *</label>
+                                    <input type="email" id="recruiter-email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:border-indigo-500 focus:outline-none text-sm text-white placeholder-slate-500">
+                                </div>
+                                <div>
+                                    <label for="opportunity-type" class="block text-xs font-medium text-slate-300 mb-1.5">Opportunity Type *</label>
+                                    <select id="opportunity-type" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:border-indigo-500 focus:outline-none text-sm text-white">
+                                        <option value="CS / Tech Internship">CS / Software / IT Internship</option>
+                                        <option value="Video Editing / Creative Role">Video Editing / Creative Media Role</option>
+                                        <option value="Freelance Project (nexus.visuals)">Freelance Project (nexus.visuals)</option>
+                                        <option value="General Networking">General Networking / Interview</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="inquiry-message" class="block text-xs font-medium text-slate-300 mb-1.5">Role Details or Project Brief *</label>
+                                <textarea id="inquiry-message" rows="4" required placeholder="Share details about the internship, role requirements, or video/design project timeline..." class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:border-indigo-500 focus:outline-none text-sm text-white placeholder-slate-500"></textarea>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-1">
+                                <p class="text-xs text-slate-400">
+                                    Generates an instant recruiter brief & direct LinkedIn follow-up option.
+                                </p>
+                                <button type="submit" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-lg shadow-indigo-600/25 transition-all cursor-pointer">
+                                    <i data-lucide="send" class="w-4 h-4"></i>
+                                    <span>Submit Inquiry</span>
+                                </button>
+                            </div>
+
+                            <!-- Inline Confirmation Banner (Replaces alert()) -->
+                            <div id="form-feedback" class="hidden p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-200 text-xs sm:text-sm space-y-2">
+                                <div class="flex items-center gap-2 font-semibold text-emerald-300">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                                    <span>Inquiry Prepared for Surojit Saha!</span>
+                                </div>
+                                <p id="feedback-summary" class="text-slate-300 leading-relaxed"></p>
+                                <div class="pt-1 flex flex-wrap gap-3">
+                                    <a href="https://www.linkedin.com/in/surojit-saha-573ba4433" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs font-semibold transition-colors">
+                                        <span>Message Directly on LinkedIn</span>
+                                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                    </a>
+                                    <button type="button" onclick="copyInquiryText()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium transition-colors cursor-pointer">
+                                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                                        <span>Copy Brief Text</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="no-print border-t border-slate-900 bg-slate-950 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+            <div class="flex items-center gap-2">
+                <span class="font-bold text-slate-200">Surojit Saha</span>
+                <span>•</span>
+                <span class="font-mono text-cyan-400">nexus.visuals</span>
+                <span>•</span>
+                <span>Falakata / Siliguri, WB</span>
+            </div>
+            <div class="flex items-center gap-5">
+                <button onclick="openResumeModal()" class="hover:text-white transition-colors cursor-pointer">Printable Resume</button>
+                <a href="https://www.linkedin.com/in/surojit-saha-573ba4433" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition-colors">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== PRINTABLE / DOWNLOADABLE RESUME MODAL ==================== -->
+    <div id="resume-modal" class="hidden fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm overflow-y-auto p-3 sm:p-6 lg:p-10">
+        <!-- Modal Controls (Hidden when printing) -->
+        <div class="no-print max-w-4xl mx-auto mb-4 flex flex-wrap items-center justify-between gap-3 bg-slate-900 border border-slate-800 px-4 py-3 rounded-2xl">
+            <div class="flex items-center gap-2 text-sm font-semibold text-white">
+                <i data-lucide="file-check" class="w-4 h-4 text-cyan-400"></i>
+                <span>ATS-Friendly Recruiter Resume</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+                <button onclick="window.print()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs sm:text-sm font-semibold shadow-md transition-all cursor-pointer">
+                    <i data-lucide="printer" class="w-4 h-4"></i>
+                    <span>Print / Save as PDF</span>
+                </button>
+                <button onclick="closeResumeModal()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-medium transition-colors cursor-pointer">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                    <span>Close</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Clean White A4-Style Resume Sheet -->
+        <div id="resume-paper" class="max-w-4xl mx-auto bg-white text-slate-900 rounded-2xl shadow-2xl p-6 sm:p-10 lg:p-12 space-y-6">
+            <!-- Header -->
+            <header class="border-b-2 border-slate-900 pb-5 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                <div>
+                    <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-950 uppercase">Surojit Saha</h1>
+                    <p class="text-sm sm:text-base font-semibold text-indigo-700 mt-1">
+                        B.Sc. Computer Science Undergraduate • Freelance Video Editor, Cameraman & Graphic Designer (nexus.visuals)
+                    </p>
+                </div>
+                <div class="text-xs text-slate-700 space-y-1 sm:text-right">
+                    <div><strong>Location:</strong> Falakata / Siliguri, West Bengal, India</div>
+                    <div><strong>LinkedIn:</strong> linkedin.com/in/surojit-saha-573ba4433</div>
+                    <div><strong>Availability:</strong> CS/Tech Internships & Creative Media Roles</div>
+                </div>
+            </header>
+
+            <!-- Professional Summary -->
+            <section>
+                <h2 class="text-xs font-bold uppercase tracking-widest text-slate-500 border-b border-slate-200 pb-1 mb-2.5">Professional Summary</h2>
+                <p class="text-xs sm:text-sm text-slate-800 leading-relaxed">
+                    Analytical and detail-oriented first-year B.Sc. Computer Science student at Surya Sen Mahavidyalaya (University of North Bengal) with foundational expertise in C programming, Digital Logic Design, and Calculus, complemented by hands-on commercial experience as a freelance Video Editor, Cameraman, and Graphic Designer under <strong>nexus.visuals</strong>. Adept at combining structured computational problem-solving with high-impact visual storytelling, color grading, and data reporting.
+                </p>
+            </section>
+
+            <!-- Core Skills Grid -->
+            <section>
+                <h2 class="text-xs font-bold uppercase tracking-widest text-slate-500 border-b border-slate-200 pb-1 mb-2.5">Technical & Creative Skills</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-800">
+                    <div>
+                        <strong class="text-slate-950">Programming & CS Fundamentals:</strong> C Programming (Arrays, Pointers, Structures, File Handling), Digital Logic Design (Boolean Algebra, Combinational & Sequential Circuits), Calculus.
+                    </div>
+                    <div>
+                        <strong class="text-slate-950">Productivity & Data Tools:</strong> Microsoft Excel (Formulas, Data Organization, Reporting), Microsoft PowerPoint, Technical Documentation.
+                    </div>
+                    <div>
+                        <strong class="text-slate-950">Video Production & Post:</strong> DaVinci Resolve (Editing & Color Grading), CapCut, Wondershare Filmora, Multi-Angle Camera Operation & Framing.
+                    </div>
+                    <div>
+                        <strong class="text-slate-950">Graphic & Brand Design:</strong> Poster Design, Typography, Social Media Visual Systems, Promotional Thumbnails.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience & Projects -->
+            <section>
+                <h2 class="text-xs font-bold uppercase tracking-widest text-slate-500 border-b border-slate-200 pb-1 mb-3">Experience & Selected Projects</h2>
+                <div class="space-y-4 text-xs sm:text-sm">
+                    <div>
+                        <div class="flex flex-wrap justify-between font-bold text-slate-950">
+                            <span>Founder, Video Editor & Visual Designer — nexus.visuals (Freelance)</span>
+                            <span class="font-mono text-xs text-slate-600">2024 – Present</span>
+                        </div>
+                        <ul class="list-disc list-inside text-slate-800 mt-1 space-y-1 leading-relaxed">
+                            <li>Produced and edited promotional videos, social media reels, and event highlight films using DaVinci Resolve, CapCut, and Filmora.</li>
+                            <li>Executed on-site camera operation, shot composition, and color grading to maintain consistent visual aesthetics across client deliverables.</li>
+                            <li>Designed high-contrast event posters and digital graphics focused on clean typography and brand clarity.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap justify-between font-bold text-slate-950">
+                            <span>Computer Science & Digital Logic Lab Implementations — Academic</span>
+                            <span class="font-mono text-xs text-slate-600">2026 – Present</span>
+                        </div>
+                        <ul class="list-disc list-inside text-slate-800 mt-1 space-y-1 leading-relaxed">
+                            <li>Implemented modular C programs for algorithmic problem-solving, matrix manipulation, and structured record processing.</li>
+                            <li>Designed and simplified logic gate circuits using Boolean algebra and Karnaugh maps as part of Digital Logic Design coursework.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap justify-between font-bold text-slate-950">
+                            <span>Community & Cultural Event Media Lead — Falakata / Siliguri</span>
+                            <span class="font-mono text-xs text-slate-600">2024 – Present</span>
+                        </div>
+                        <ul class="list-disc list-inside text-slate-800 mt-1 space-y-1 leading-relaxed">
+                            <li>Managed live event cinematography, audio synchronization, rapid turnaround edits, and promotional print/digital collateral.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section>
+                <h2 class="text-xs font-bold uppercase tracking-widest text-slate-500 border-b border-slate-200 pb-1 mb-2.5">Education</h2>
+                <div class="space-y-2.5 text-xs sm:text-sm">
+                    <div class="flex flex-col sm:flex-row sm:justify-between">
+                        <div>
+                            <div class="font-bold text-slate-950">B.Sc. in Computer Science (1st Year Undergraduate)</div>
+                            <div class="text-slate-700">Surya Sen Mahavidyalaya, Siliguri (University of North Bengal)</div>
+                        </div>
+                        <div class="font-mono text-xs text-slate-600 sm:text-right mt-0.5 sm:mt-0">2026 – Present</div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:justify-between">
+                        <div>
+                            <div class="font-bold text-slate-950">Higher Secondary (Class XII)</div>
+                            <div class="text-slate-700">West Bengal Council of Higher Secondary Education (WBCHSE) • Falakata, WB</div>
+                        </div>
+                        <div class="font-mono text-xs text-slate-600 sm:text-right mt-0.5 sm:mt-0">Completed</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ==================== INTERACTIVE SCRIPTS ==================== -->
+    <script>
+        // Initialize Lucide Icons on load
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
+
+        // Mobile Navigation Drawer Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Resume Modal Controls
+        function openResumeModal() {
+            const modal = document.getElementById('resume-modal');
+            modal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function closeResumeModal() {
+            const modal = document.getElementById('resume-modal');
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeResumeModal();
+            }
+        });
+
+        // Project Category Filter
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.classList.add('bg-indigo-600', 'text-white');
+                    btn.classList.remove('text-slate-400');
+                } else {
+                    btn.classList.remove('bg-indigo-600', 'text-white');
+                    btn.classList.add('text-slate-400');
+                }
+            });
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Copy LinkedIn / Profile Link using execCommand fallback
+        function copyProfileLink() {
+            const url = 'https://www.linkedin.com/in/surojit-saha-573ba4433';
+            const tempInput = document.createElement('textarea');
+            tempInput.value = url;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand('copy');
+                const btnText = document.getElementById('copy-btn-text');
+                btnText.textContent = 'Copied!';
+                setTimeout(() => {
+                    btnText.textContent = 'Copy';
+                }, 2200);
+            } catch (err) {
+                console.error('Copy failed', err);
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        // Store last generated inquiry text for easy copying
+        let latestInquiryBrief = '';
+
+        // Handle Recruiter Inquiry Form Submission
+        function handleInquirySubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('recruiter-name').value.trim();
+            const company = document.getElementById('company-name').value.trim();
+            const email = document.getElementById('recruiter-email').value.trim();
+            const type = document.getElementById('opportunity-type').value;
+            const message = document.getElementById('inquiry-message').value.trim();
+
+            latestInquiryBrief = `Hi Surojit, I'm ${name} from ${company} (${email}). Reaching out regarding: ${type}.\n\nDetails: ${message}`;
+
+            const feedbackBox = document.getElementById('form-feedback');
+            const summaryEl = document.getElementById('feedback-summary');
+
+            summaryEl.textContent = `Thank you, ${name} (${company}). Your "${type}" inquiry is ready. Click below to send it directly via Surojit's LinkedIn or copy the formatted brief.`;
+            feedbackBox.classList.remove('hidden');
+
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function copyInquiryText() {
+            if (!latestInquiryBrief) return;
+            const tempInput = document.createElement('textarea');
+            tempInput.value = latestInquiryBrief;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand('copy');
+            } catch (err) {
+                console.error('Copy failed', err);
+            }
+            document.body.removeChild(tempInput);
+        }
+    </script>
+</body>
+</html>
+```
